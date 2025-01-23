@@ -1,0 +1,55 @@
+b = {"hello" : "salam",
+     "appel" : "alma", 
+     "lemon" : "limon",
+     "cat" : "pisik", 
+     "dog" : "it",
+     "flag" : "baydak",
+     "student" : "okuwcy",
+     "fimily" : "masgala",
+     "pen" : "rucka",
+     "water" : "suw",
+     "bread" : "corek"}
+
+while True:
+    print("\n******My Dictionary Programm******")
+    print("1. Show")
+    print("2. Add")
+    print("3. Edit")
+    print("4. Delete")
+    print("5. Exit")
+    choice = int(input("Your choice? "))
+
+    if choice == 1:
+        if b:
+            print("\nDictionary Programm: ")
+            for i, j in b.items():
+                print(f"{i} - {j}")
+        else:
+            print("Dictionary words not appear")
+    elif choice == 2:
+        english = input("Enter the word English: ").strip()
+        turkmen = input("Enter the word in Turkmen: ").strip()
+        if english and turkmen:
+            b[english] = turkmen
+            print("Added successfully!")
+        else:
+            print("enter a normal word")
+    elif choice == 3:
+        english = input("Enter the word in English to edit: ").strip()
+        if english in b:
+            turkmen = input("Enter the new word in Turkmen: ").strip()
+            if turkmen:
+                b[english] = turkmen
+                print("Edited successfully!")
+            else:
+                print("enter a normal word")
+    elif choice == 4:
+        english = input("Enter the word in English to delete: ").strip()
+        if english in b:
+            del b[english]
+            print("Deleted successfully!")
+        else:
+            print("The word is not deleted")
+    elif choice == 5:
+        print("Thanks for using programm")
+        break
